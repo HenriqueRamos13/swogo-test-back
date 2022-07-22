@@ -62,7 +62,6 @@ class RecommendationService {
     };
 
     this.feedSomeWords(productDoc);
-
     // this.removeInutileWords(productDoc);
 
     let products = await ProductRepository.findAll();
@@ -79,7 +78,6 @@ class RecommendationService {
       objToReturn.data = this.countWordsInArray(finalData);
 
       this.feedSomeWords(objToReturn);
-
       // this.removeInutileWords(objToReturn);
 
       return objToReturn;
@@ -123,14 +121,9 @@ class RecommendationService {
       }, 0);
       // console.log("magnitude2", magnitude2);
 
-      // Calcula o cosseno
-      // console.log(
-      //   "result",
-      //   dotProduct / (Math.sqrt(magnitude1) * Math.sqrt(magnitude2))
-      // );
-
       if (dotProduct === 0) return 0;
 
+      // Calcula o cosseno
       return dotProduct / (Math.sqrt(magnitude1) * Math.sqrt(magnitude2));
     };
 
@@ -142,13 +135,7 @@ class RecommendationService {
 
     const recommendedProducts = similarities.slice(0, 5);
 
-    console.log(recommendedProducts);
-
     return recommendedProducts.map((e) => products.find((p) => p._id === e.id));
-
-    // return products
-    //   .filter((e) => recommendedProducts.some((r) => r.id === e._id))
-    //   .reverse();
   }
 }
 
