@@ -35,6 +35,15 @@ class RecommendationService {
         obj.data[key] = Math.round(obj.data[key] * 1.5);
       }
     });
+
+    // Feed for phones
+    const regexp = /\d+cmX\d+cm/;
+
+    Object.keys(obj.data).forEach((key) => {
+      if (regexp.test(key)) {
+        obj.data[key] = Math.round(obj.data[key] * 10);
+      }
+    });
   }
 
   private removeInutileWords(obj: { data: any; id: string }) {
