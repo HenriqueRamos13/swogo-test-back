@@ -1,4 +1,4 @@
-# Default Express App
+# Swogo petshop
 
 > A simple back end for the swogo company test. It has some routes such as registering products and searching for products. Another runs a simple content-based filtering algorithm to recommend similar products..
 
