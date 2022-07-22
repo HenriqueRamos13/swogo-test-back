@@ -7,9 +7,8 @@
     "node": "16.13.2"
   },
   "scripts": {
-    "tsc": "./node_modules/typescript/bin/tsc",
     "dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
-    "build": "tsc",
+    "build": "./node_modules/typescript/bin/tsc",
     "start:prod": "node dist/index.js",
     "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build"
   },
