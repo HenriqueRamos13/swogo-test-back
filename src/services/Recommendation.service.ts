@@ -37,7 +37,7 @@ class RecommendationService {
     });
 
     // Feed for phones
-    const regexp = /\d+cmX\d+cm/;
+    const regexp = /\d+cmx\d+cm/;
 
     Object.keys(obj.data).forEach((key) => {
       if (regexp.test(key)) {
